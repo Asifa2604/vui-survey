@@ -1,4 +1,4 @@
--by Asifa
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,7 +44,7 @@
             </p>
         </header>
 
-        <nav class="flex justify-center space-x-4 mb-8">
+        <nav class="flex flex-wrap justify-center gap-4 mb-8">
             <button id="voiceEnabledBtn" class="nav-button px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out bg-blue-600 text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active" onclick="showSection('voiceEnabledSection')">
                 Voice Enabled Experience
             </button>
@@ -99,13 +99,19 @@
         <!-- Feedback Link Section -->
         <section class="section bg-purple-50 border border-purple-200 rounded-lg p-6 md:p-8 shadow-inner text-center">
             <h2 class="text-3xl font-bold text-purple-800 mb-6">Provide Your Feedback</h2>
-            <p class="text-gray-700 mb-8 max-wxl mx-auto">
+            <p class="text-gray-700 mb-8 max-w-2xl mx-auto">
                 Your detailed feedback on both experiences is invaluable for my research. Please click the button below to fill out the survey on Google Forms.
             </p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFCjyJuN3j2L4Yr8MUz5WsmNBHgoYkfszLmIFoUOVIj4QJOQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-purple-600 text-white text-xl font-bold rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
                 Go to Feedback Form
             </a>
-                    </section>
+            <p class="text-sm text-gray-500 mt-4">
+                <strong class="text-red-500">Important:</strong> Please replace "YOUR_GOOGLE_FORM_LINK_HERE" in the HTML code with your actual Google Form link before using.
+            </p>
+            <p class="text-sm text-gray-500 mt-2">
+                <strong class="text-blue-500">Note on Interactions:</strong> Your product interactions (e.g., 'Add to Cart', 'View Details', voice commands) are logged to your browser's developer console. You can access this by pressing `F12` (or `Ctrl+Shift+I` / `Cmd+Option+I`) and navigating to the 'Console' tab.
+            </p>
+        </section>
     </div>
 
     <script>
