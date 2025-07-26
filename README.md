@@ -105,13 +105,7 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFCjyJuN3j2L4Yr8MUz5WsmNBHgoYkfszLmIFoUOVIj4QJOQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-purple-600 text-white text-xl font-bold rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
                 Go to Feedback Form
             </a>
-            <p class="text-sm text-gray-500 mt-4">
-                <strong class="text-red-500">Important:</strong> Please replace "YOUR_GOOGLE_FORM_LINK_HERE" in the HTML code with your actual Google Form link before using.
-            </p>
-            <p class="text-sm text-gray-500 mt-2">
-                <strong class="text-blue-500">Note on Interactions:</strong> Your product interactions (e.g., 'Add to Cart', 'View Details', voice commands) are logged to your browser's developer console. You can access this by pressing `F12` (or `Ctrl+Shift+I` / `Cmd+Option+I`) and navigating to the 'Console' tab.
-            </p>
-        </section>
+                    </section>
     </div>
 
     <script>
