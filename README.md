@@ -30,47 +30,83 @@
             color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        /* Mobile-specific styles */
+        @media (max-width: 640px) {
+            .nav-button {
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            .product-card {
+                padding: 1rem;
+            }
+            .product-card img {
+                height: 150px;
+            }
+            .voice-command-btn {
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+                width: 100%;
+            }
+            .product-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .product-buttons button {
+                width: 100%;
+            }
+        }
+        /* Tablet-specific styles */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .product-card {
+                padding: 1.25rem;
+            }
+            .nav-button {
+                padding: 0.75rem 1.5rem;
+            }
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl w-full bg-white rounded-xl shadow-2xl p-8 md:p-12 space-y-10">
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl w-full bg-white rounded-xl shadow-2xl p-6 md:p-8 lg:p-12 space-y-8 md:space-y-10">
         <header class="text-center">
-            <h1 class="text-4xl font-extrabold text-gray-900 mb-4">VUI Survey: Interactive Product Experience</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-3 md:mb-4">VUI Survey: Interactive Product Experience</h1>
+            <p class="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                 Welcome! Explore our product catalog using two different interfaces. Your interactions will help us understand the usability of Voice User Interfaces.
             </p>
-            <p class="text-md text-gray-500 mt-2">
+            <p class="text-xs sm:text-sm md:text-md text-gray-500 mt-2">
                 Please interact with both the "Voice Enabled" and "Standard" experiences, then provide your feedback via the Google Form link below.
             </p>
         </header>
 
-        <nav class="flex flex-wrap justify-center gap-4 mb-8">
-            <button id="voiceEnabledBtn" class="nav-button px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out bg-blue-600 text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active" onclick="showSection('voiceEnabledSection')">
-                Voice Enabled Experience
+        <nav class="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-6 md:mb-8">
+            <button id="voiceEnabledBtn" class="nav-button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all duration-300 ease-in-out bg-blue-600 text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active" onclick="showSection('voiceEnabledSection')">
+                Voice Enabled
             </button>
-            <button id="standardBtn" class="nav-button px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out bg-gray-200 text-gray-800 shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2" onclick="showSection('standardSection')">
-                Standard Web Experience
+            <button id="standardBtn" class="nav-button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all duration-300 ease-in-out bg-gray-200 text-gray-800 shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2" onclick="showSection('standardSection')">
+                Standard Web
             </button>
         </nav>
 
         <!-- Voice Enabled Section -->
-        <section id="voiceEnabledSection" class="section bg-blue-50 border border-blue-200 rounded-lg p-6 md:p-8 shadow-inner">
-            <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">Voice Enabled Product Catalog</h2>
-            <p class="text-gray-700 mb-4 text-center">
+        <section id="voiceEnabledSection" class="section bg-blue-50 border border-blue-200 rounded-lg p-4 sm:p-5 md:p-6 lg:p-8 shadow-inner">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-blue-800 mb-4 sm:mb-5 md:mb-6 text-center">Voice Enabled Product Catalog</h2>
+            <p class="text-xs sm:text-sm md:text-base text-gray-700 mb-3 sm:mb-4 text-center">
                 **Hover your mouse over any product card to hear its description.**
             </p>
-            <p class="text-gray-700 mb-6 text-center font-semibold">
+            <p class="text-sm sm:text-base md:text-base text-gray-700 mb-4 sm:mb-5 md:mb-6 text-center font-semibold">
                 Click "Start Voice Control" to use voice commands:
             </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                <button id="voiceControlBtn" class="px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out bg-blue-500 text-white shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" onclick="toggleVoiceControl()">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 md:mb-8">
+                <button id="voiceControlBtn" class="voice-command-btn px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all duration-300 ease-in-out bg-blue-500 text-white shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" onclick="toggleVoiceControl()">
                     Start Voice Control
                 </button>
-                <span id="voiceStatus" class="text-gray-600 text-sm">Click to enable voice commands.</span>
+                <span id="voiceStatus" class="text-xs sm:text-sm text-gray-600 mt-2 sm:mt-0">Click to enable voice commands.</span>
             </div>
-            <div class="bg-blue-100 border border-blue-300 text-blue-800 px-4 py-3 rounded-md mb-8">
-                <p class="font-bold text-xl mb-3">How to use Voice Commands:</p>
-                <ul class="list-disc list-inside space-y-2 text-lg">
+            <div class="bg-blue-100 border border-blue-300 text-blue-800 px-3 sm:px-4 py-2 sm:py-3 rounded-md mb-6 md:mb-8">
+                <p class="font-bold text-lg sm:text-xl mb-2 sm:mb-3">How to use Voice Commands:</p>
+                <ul class="list-disc list-inside space-y-1 sm:space-y-2 text-xs sm:text-sm md:text-base">
                     <li>Say a **product name** (e.g., "Smartwatch") to hear its description.</li>
                     <li>Say "**[Product Name] add to cart**" (e.g., "Earbuds add to cart") to simulate adding to cart.</li>
                     <li>Say "**[Product Name] price**" (e.g., "Laptop price") to hear the product's price.</li>
@@ -79,33 +115,33 @@
                 </ul>
             </div>
 
-            <div id="voiceProductGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="voiceProductGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
                 <!-- Product cards will be injected here by JavaScript -->
             </div>
         </section>
 
         <!-- Standard Web Section -->
-        <section id="standardSection" class="section bg-gray-50 border border-gray-200 rounded-lg p-6 md:p-8 shadow-inner hidden">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Standard Product Catalog</h2>
-            <p class="text-gray-700 mb-8 text-center">
+        <section id="standardSection" class="section bg-gray-50 border border-gray-200 rounded-lg p-4 sm:p-5 md:p-6 lg:p-8 shadow-inner hidden">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-5 md:mb-6 text-center">Standard Product Catalog</h2>
+            <p class="text-sm sm:text-base md:text-base text-gray-700 mb-6 md:mb-8 text-center">
                 Browse products and interact using traditional clicks. No voice feedback or voice commands in this section.
             </p>
 
-            <div id="standardProductGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="standardProductGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
                 <!-- Product cards will be injected here by JavaScript -->
             </div>
         </section>
 
         <!-- Feedback Link Section -->
-        <section class="section bg-purple-50 border border-purple-200 rounded-lg p-6 md:p-8 shadow-inner text-center">
-            <h2 class="text-3xl font-bold text-purple-800 mb-6">Provide Your Feedback</h2>
-            <p class="text-gray-700 mb-8 max-w-2xl mx-auto">
+        <section class="section bg-purple-50 border border-purple-200 rounded-lg p-4 sm:p-5 md:p-6 lg:p-8 shadow-inner text-center">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-purple-800 mb-4 sm:mb-5 md:mb-6">Provide Your Feedback</h2>
+            <p class="text-sm sm:text-base md:text-base text-gray-700 mb-6 md:mb-8 max-w-2xl mx-auto">
                 Your detailed feedback on both experiences is invaluable for my research. Please click the button below to fill out the survey on Google Forms.
             </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFCjyJuN3j2L4Yr8MUz5WsmNBHgoYkfszLmIFoUOVIj4QJOQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-purple-600 text-white text-xl font-bold rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFCjyJuN3j2L4Yr8MUz5WsmNBHgoYkfszLmIFoUOVIj4QJOQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-purple-600 text-white text-base sm:text-lg md:text-xl font-bold rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
                 Go to Feedback Form
             </a>
-                    </section>
+        </section>
     </div>
 
     <script>
@@ -317,7 +353,7 @@
 
             products.forEach(product => {
                 const card = document.createElement('div');
-                card.className = 'product-card bg-white rounded-lg p-6 shadow-md border border-gray-200 flex flex-col';
+                card.className = 'product-card bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-md border border-gray-200 flex flex-col';
 
                 if (isVoiceEnabled) {
                     // Mouseover for initial description
@@ -325,22 +361,28 @@
                     card.onmouseover = () => speakText(product.description); // Only description on hover
                     card.onmouseout = stopSpeaking;
                     card.classList.add('cursor-pointer', 'hover:shadow-lg');
+                    // Add touch support for mobile
+                    card.ontouchstart = () => {
+                        if (!isListening) {
+                            speakText(product.description);
+                        }
+                    };
                 } else {
                     card.classList.add('hover:shadow-lg'); // Still nice to have hover effect
                 }
 
                 card.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}" class="rounded-md mb-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">${product.name}</h3>
-                    <p class="text-gray-600 text-sm mb-4 flex-grow">${product.description}</p>
+                    <img src="${product.image}" alt="${product.name}" class="rounded-md mb-3 sm:mb-4">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-1 sm:mb-2">${product.name}</h3>
+                    <p class="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 flex-grow">${product.description}</p>
                     <div class="mt-auto">
-                        <p class="text-2xl font-bold text-blue-700 mb-4">${product.price}</p>
-                        <div class="flex space-x-3">
-                            <button class="flex-1 px-4 py-2 rounded-md bg-blue-500 text-white font-medium hover:bg-blue-600 transition-colors duration-200"
+                        <p class="text-xl sm:text-2xl font-bold text-blue-700 mb-3 sm:mb-4">${product.price}</p>
+                        <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 product-buttons">
+                            <button class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-md bg-blue-500 text-white font-medium hover:bg-blue-600 transition-colors duration-200"
                                 onclick="handleButtonClick('view', '${product.id}', ${isVoiceEnabled})">
                                 View Details
                             </button>
-                            <button class="flex-1 px-4 py-2 rounded-md bg-green-500 text-white font-medium hover:bg-green-600 transition-colors duration-200"
+                            <button class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-md bg-green-500 text-white font-medium hover:bg-green-600 transition-colors duration-200"
                                 onclick="handleButtonClick('add_to_cart', '${product.id}', ${isVoiceEnabled})">
                                 Add to Cart
                             </button>
